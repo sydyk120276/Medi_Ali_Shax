@@ -5,7 +5,7 @@ const swiper = new Swiper(".swiper", {
   speed: 1000,
   // spaceBetween: 10,
   slidesPerView: 1,
-  // autoplay: true,
+  autoplay: true,
 
   // If we need pagination
   pagination: {
