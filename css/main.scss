@@ -13,13 +13,17 @@ li {
   list-style-type : none;
 }
 
+$pc: 1480px; // Пкб ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: 991.98px; // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: 767.98px; // телефоны L
+$mobileSmall: 479.98px; // телефоны s
+
 .wrapper {
     width: 100%;
     justify-content: center;
     flex-direction: column;
     display: flex;
 }
-
 
 ._anim_items {
   transform: translate(0px, 100%);
@@ -42,6 +46,7 @@ li {
     height: 90px;
     justify-content: space-between;
     align-items: center;
+    padding: 0 50px;
   }
       &__menu {
       display: flex;
@@ -63,10 +68,7 @@ li {
 
 // Header
 
-// .container {
-//     display: flex;
-//     width: 1175px;
-// }
+
 
 // form
 
@@ -78,7 +80,7 @@ li {
     width: 1175px;
     display: flex;
     flex-direction: column;
-    padding: 80px 0 90px 0;
+    padding: 80px 20px 90px 20px;
   }
 		&__title {
       display: flex;
@@ -99,7 +101,7 @@ li {
       opacity: 0;
       transition: all 0.8s ease 0.4s;
       &-input {
-        width: 301px;
+        width: 25%;
         height: 51px;
         border: 1px solid #E0E0E0;
         border-radius: 5px;
@@ -109,7 +111,7 @@ li {
       }
 
       &-button {
-        width: 170px;
+        width: 25%;
         height: 51px;
         background: rgba(8, 166, 82, 0.85);
         border-radius: 5px;
@@ -153,6 +155,7 @@ li {
          display: flex;
         z-index: 2;
         justify-content: space-between;
+        padding: 0 20px;
       }
       &__content {
         width: 470px;
@@ -236,6 +239,7 @@ li {
       width: 1175px;
       display: flex;
       flex-direction: column;
+      padding: 0 20px;
 		}
 
 		&__title {
@@ -253,68 +257,65 @@ li {
 		&__items {
       display: flex;
       gap: 30px;
-		}
-}
-.item-catalog {
-
-		&__img_1 {
-      background-image: url('../img/catalog/image_1.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      width: 270px;
-      height: 277px;
-      position: relative;
-      transform: translate(-100px, 0px);
-      opacity: 0;
-      transition: all 0.8s ease 0.3s;
-		}
-		&__img_2 {
-      background-image: url('../img/catalog/image_2.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      width: 270px;
-      height: 277px;
-      position: relative;
-		}
-		&__img_3 {
-      background-image: url('../img/catalog/image_3.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      width: 270px;
-      height: 277px;
-      position: relative;
-		}
-		&__img_4 {
-      background-image: url('../img/catalog/image_4.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      width: 270px;
-      height: 277px;
-      position: relative;
-      transform: translate(100px, 0px);
-      opacity: 0;
-      transition: all 0.8s ease 0.3s;
-		}
-
-		&__button {
-      position: absolute;
-      width: 270px;
-      height: 65px;
-      background: rgba(98, 105, 108, 0.85);
-      font-style: normal;
-      font-weight: 600;
-      font-size: 15px;
-      line-height: 135.3%;
-      color: #FFFFFF;
-      text-decoration: none;
-      bottom: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      &_img_1 {
+         background-image: url('../img/catalog/image_1.png');
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center;
+         width: 25%;
+         height: 277px;
+         position: relative;
+         transform: translate(-100px, 0px);
+         opacity: 0;
+         transition: all 0.8s ease 0.3s;
+         }
+         &_img_2 {
+         background-image: url('../img/catalog/image_2.png');
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center;
+         width: 25%;
+         height: 277px;
+         position: relative;
+         }
+         &_img_3 {
+         background-image: url('../img/catalog/image_3.png');
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center;
+         width: 25%;
+         height: 277px;
+         position: relative;
+         }
+         &_img_4 {
+         background-image: url('../img/catalog/image_4.png');
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center;
+         width: 25%;
+         height: 277px;
+         position: relative;
+         transform: translate(100px, 0px);
+         opacity: 0;
+         transition: all 0.8s ease 0.3s;
+         }
+   
+         &_button {
+         position: absolute;
+         width: 100%;
+         height: 65px;
+         background: rgba(98, 105, 108, 0.85);
+         font-style: normal;
+         font-weight: 600;
+         font-size: 15px;
+         line-height: 135.3%;
+         color: #FFFFFF;
+         text-decoration: none;
+         bottom: 0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         }
 		}
 }
 
@@ -337,6 +338,7 @@ li {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding: 0 20px;
 		}
 
 		&__item {
@@ -393,10 +395,11 @@ li {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0 20px;
 		}
 
 		&__block {
-      width: 470px;
+      width: 45%;
       height: 504px;
       transform: translate(-50px, 0px);
       opacity: 0;
@@ -415,8 +418,6 @@ li {
 
 		}
     &__image {
-      width: 570px;
-      height: 512px;
       transform: translate(100px, 0px);
       opacity: 0;
       transition: all 0.8s ease 0.2s;
@@ -504,7 +505,11 @@ li {
       display: flex;
       align-items: center;
       flex-direction: column;
+      padding: 0 20px;
 		}
+      .questions__items {
+         width: 100%;
+      }
 
 		&__title {
       font-family: 'Inter';
@@ -585,6 +590,7 @@ li {
       display: flex;
       align-items: center;
       flex-direction: column;
+      padding: 0 20px;
 		}
 
 		&__title {
@@ -704,6 +710,7 @@ li {
       width: 1175px;
       display: flex;
       justify-content: space-between;
+      padding: 0 20px;
 		}
 
 		&__catalog {

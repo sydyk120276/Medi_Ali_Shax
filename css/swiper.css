@@ -1,7 +1,17 @@
+@charset "UTF-8";
 .swiper {
-  width: 100%;
   height: 600px !important;
   position: relative;
+}
+
+.slide-img {
+  width: 100% !important;
+  height: 100vh;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100vh; /* высота может быть любой, в зависимости от требований дизайна */
 }
 
 .swiper-pagination-bullet {
@@ -26,29 +36,16 @@
   left: 0px;
   top: 112px;
   background: rgba(255, 255, 255, 0.48);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  align-items: center;
+  justify-content: end;
 }
-
 .slaider-banner__container {
   width: 622px;
   gap: 55px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .slaider-banner__title {
   width: 622px;
   height: 149px;
@@ -58,7 +55,6 @@
   line-height: 135.3%;
   color: #1F2125;
 }
-
 .slaider-banner__button {
   background: rgba(8, 166, 82, 0.85);
   border-radius: 5px;
@@ -70,5 +66,4 @@
   color: #FFFFFF;
   width: 248px;
   height: 75px;
-}
-/*# sourceMappingURL=swiper.css.map */
+}/*# sourceMappingURL=swiper.css.map */

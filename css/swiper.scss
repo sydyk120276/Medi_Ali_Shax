@@ -1,10 +1,18 @@
 .swiper {
-  width: 100%;
+  
   height: 600px !important;
   position: relative;
 }
-.swiper-slide {
 
+
+.slide-img {
+  width: 100% !important;
+  height: 100vh;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100vh; /* высота может быть любой, в зависимости от требований дизайна */
 }
 
 .swiper-pagination-bullet {

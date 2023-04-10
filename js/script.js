@@ -1,16 +1,21 @@
 const swiper = new Swiper(".swiper", {
+  // slidesPerView: 'auto', // устанавливаем автоматический расчет количества видимых слайдов
+  // spaceBetween: 0, // устанавливаем расстояние между слайдами в 0
+  // centeredSlides: true, // устанавливаем, что слайды будут центрироваться
+  // grabCursor: true, // устанавливаем курсор-руку при наведении на слайдер
   // Optional parameters
   // direction: "vertical",
   loop: true,
   speed: 1000,
-  // spaceBetween: 10,
+  spaceBetween: 0,
   slidesPerView: 1,
-  autoplay: true,
+  // autoplay: true,
 
   // If we need pagination
   pagination: {
     el: ".swiper-pagination",
     type: "bullets",
+    clickable: true, // устанавливаем, что пагинация будет кликабельна
   },
 
   // Navigation arrows
