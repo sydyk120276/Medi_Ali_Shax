@@ -70,4 +70,9 @@ if (animItems.length > 0) {
   }, 300);
 }
 
+document.querySelector(".icon-menu").addEventListener("click", function () {
+  document.querySelector(".icon-menu").classList.toggle("active");
+  document.querySelector(".icon-menu-span").classList.toggle("active");
+  document.querySelector(".menu__body").classList.toggle("active");
+});
 

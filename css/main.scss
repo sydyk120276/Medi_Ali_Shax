@@ -18,6 +18,11 @@ $tablet: 991.98px; // Планшеты, некоторые телефоны в �
 $mobile: 767.98px; // телефоны L
 $mobileSmall: 479.98px; // телефоны s
 
+@mixin adaptive-value($property, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / 1440))
+  }
+
 .wrapper {
     width: 100%;
     justify-content: center;
@@ -38,15 +43,22 @@ $mobileSmall: 479.98px; // телефоны s
 // Header
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
+  background: white;
+  height: 90px;
+  width: 100%;
+      z-index: 10;
   &__container {
     display: flex;
     width: 1175px;
-    height: 90px;
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
+
   }
       &__menu {
       display: flex;
@@ -56,6 +68,9 @@ $mobileSmall: 479.98px; // телефоны s
       line-height: 19px;
       color: #1F2125;
       gap: 30px;
+      @media (max-width: $tablet) {
+        display: none;
+      }
 
     }
     &__logo {
@@ -299,7 +314,7 @@ $mobileSmall: 479.98px; // телефоны s
          opacity: 0;
          transition: all 0.8s ease 0.3s;
          }
-   
+
          &_button {
          position: absolute;
          width: 100%;
@@ -609,6 +624,7 @@ $mobileSmall: 479.98px; // телефоны s
       display: flex;
       width: 100%;
       justify-content: space-between;
+      gap: 30px;
 		&-map {
       display: flex;
       width: 668px;
@@ -764,6 +780,104 @@ $mobileSmall: 479.98px; // телефоны s
 
 // footer
 
+// Burger
+ .menu {
+   display: none;
+   @media (max-width: $tablet) {
+      display: flex;
+      align-items: center;
+   }
+  &__body {
+    @media (max-width: $tablet) {
+      position: fixed;
+      width: 100%;
+      height: 200px;
+      top: 90px;
+      left: -100%;
+      overflow: auto;
+      background-color: #72b9ad;
+      padding: rem(100) 0 rem(50) 0;
+      transition: left 0.3s ease 0s;
+      z-index: 4;
+      &::before {
+        content: "";
+        position: fixed;
+        width: 100%;
+        height: rem(70);
+        left: -100%;
+        top: 0;
+        background-color: #141414;
+      }
+      &.active{
+        left: 0;
+        &::before {
+          left: 0;
+        }
+      }
+      &-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 20px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #1F2125;
+        gap: 30px;
+      }
+    }
+  }
+}
+.icon-menu {
+  background-color: white;
+  border: none;
+  @media (max-width: $tablet) {
+    z-index: 10;
+    display: flex;
+    position: relative;
+    width: 40px;
+    height: 20px;
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: black;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    &.active::after {
+      transform: rotate(-45deg);
+      bottom: 9px;
+    }
+    &.active::before {
+      transform: rotate(45deg);
+      top: 9px;
+      transition: all 0.3s ease;
+    }
+    &-span {
+      position: absolute;
+      background-color: black;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      top: 9px;
+    }
+    &-span.active {
+      transform: scale(0);
+    }
+}
+}
+
+
 
 @import './swiper'
-
